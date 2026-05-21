@@ -142,7 +142,7 @@ function HomeHero({ mode }) {
 function HomeIntro() {
   return (
     <section className="container reveal" style={{ padding: "160px var(--pad-x) 140px" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.45fr) minmax(0, 1fr)", gap: "min(80px, 6vw)", alignItems: "center" }}>
+      <div data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.45fr) minmax(0, 1fr)", gap: "min(80px, 6vw)", alignItems: "center" }}>
         {/* Visual block — controlled editorial proportion */}
         <div style={{ position: "relative", overflow: "hidden", aspectRatio: "16 / 10", width: "100%", background: "#1B1A18" }}>
           <img src="assets/atelier.jpg" alt="Atelier MVA" style={{
@@ -249,7 +249,7 @@ function FeaturedMaterialCard({ item, idx, go }) {
     onMouseEnter={() => setHover(true)}
     onMouseLeave={() => setHover(false)}
     style={{ background: "var(--bg)", padding: 0, display: "block" }}>
-      <div style={{ position: "relative", overflow: "hidden", height: "62vh", minHeight: 380, background: "#1B1A18" }}>
+      <div className="mat-card-img" style={{ position: "relative", overflow: "hidden", height: "62vh", minHeight: 380, background: "#1B1A18" }}>
         <div style={{
           position: "absolute", inset: 0,
           backgroundImage: `url("${item.image}")`,
@@ -282,7 +282,7 @@ function EditorialPull() {
     <section className="surface-deep" style={{ padding: "160px 0", color: "var(--bg)" }}>
       <div className="container reveal" style={{
         display: "grid", gridTemplateColumns: "minmax(0, 1.45fr) minmax(0, 1fr)", gap: "min(80px, 6vw)", alignItems: "stretch"
-      }}>
+      }} data-mobile-stack="">
         {/* Left visual card — height-matched to text column */}
         <div style={{ position: "relative", overflow: "hidden", width: "100%", background: "#1B1A18", minHeight: 0 }}>
           <img src="assets/actualidade.png" alt="Actualidade MVA" style={{
@@ -337,7 +337,7 @@ function EditorialPull() {
 function ArchitectureInMatter({ go }) {
   return (
     <section className="surface-deep" style={{ padding: "160px 0", color: "var(--bg)" }}>
-      <div className="container reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "min(80px, 6vw)", alignItems: "end", marginBottom: 60 }}>
+      <div className="container reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "min(80px, 6vw)", alignItems: "end", marginBottom: 60 }}>
         <div>
           <div className="t-mono" style={{ color: "rgba(244,242,238,.6)", marginBottom: 18 }}>§ 04 — Aplicações</div>
           <h2 className="t-h1" style={{ margin: 0, color: "rgb(255, 255, 255)", fontWeight: 300, maxWidth: "14ch" }}>
@@ -358,7 +358,7 @@ function ArchitectureInMatter({ go }) {
           <img src="assets/aplicacoes-1.jpg" alt="Aplicação em contexto — bancada" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
         </div>
         {/* 3 vertical cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+        <div className="arch-3col" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
           <div style={{ aspectRatio: "3 / 4", overflow: "hidden", background: "#1B1A18" }}>
             <img src="assets/aplicacoes-2.jpg" alt="Revestimento de parede em mármore" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
           </div>
@@ -392,7 +392,7 @@ function ApplicationsBlock({ go }) {
 
   return (
     <section className="container reveal" style={{ padding: "160px var(--pad-x)" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 64 }}>
+      <div data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 64 }}>
         <div className="t-mono">§ 05 — Espaços</div>
         <div>
           <h2 className="t-h1" style={{ margin: 0, fontWeight: 300, maxWidth: "22ch" }}>
@@ -407,6 +407,7 @@ function ApplicationsBlock({ go }) {
         href="#/portfolio"
         data-href-external=""
         onClick={(e) => {e.preventDefault();go("portfolio");}}
+        className="app-row"
         style={{
           display: "grid", gridTemplateColumns: "80px 1fr 320px 60px",
           alignItems: "center", padding: "40px 0",
@@ -417,8 +418,8 @@ function ApplicationsBlock({ go }) {
         onMouseLeave={(e) => {e.currentTarget.style.paddingLeft = "0px";}}>
             <span className="t-mono">/{a.n}</span>
             <span className="t-h2" style={{ fontWeight: 300, letterSpacing: "-0.02em" }}>{a.label}</span>
-            <span className="t-small" style={{ color: "var(--mid)", maxWidth: "40ch" }}>{a.desc}</span>
-            <span style={{ textAlign: "right" }}>
+            <span className="app-desc t-small" style={{ color: "var(--mid)", maxWidth: "40ch" }}>{a.desc}</span>
+            <span className="app-arr" style={{ textAlign: "right" }}>
               <span style={{
               display: "inline-block", width: 30, height: 1, background: "var(--ink)", verticalAlign: "middle"
             }} />
@@ -434,13 +435,13 @@ function ApplicationsBlock({ go }) {
 function ProcessBlock() {
   return (
     <section className="container" style={{ padding: "40px var(--pad-x) 160px" }}>
-      <div className="reveal" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 80 }}>
+      <div className="reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 80 }}>
         <div className="t-mono">§ 06 — Processo</div>
         <div>
           <h2 className="t-h1" style={{ margin: 0, fontWeight: 300, maxWidth: "22ch" }}>Quatro fases.<br />Um único cuidado.</h2>
         </div>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "var(--line)" }}>
+      <div data-mobile-2col="" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "var(--line)" }}>
         {SERVICES.map((s, idx) =>
         <div key={s.id} className="reveal" style={{ padding: "40px 28px 56px", background: "var(--bg)", minHeight: 300 }}>
             <div className="t-mono" style={{ marginBottom: 48 }}>0{idx + 1}</div>
@@ -482,7 +483,7 @@ function HomeCTA({ go }) {
       overflow: "hidden"
     }}>
       {/* Image — left side, sits behind the typography */}
-      <div aria-hidden="true" style={{
+      <div aria-hidden="true" className="cta-bg-img" style={{
         position: "absolute",
         top: "50%",
         left: "var(--pad-x)",
@@ -504,7 +505,7 @@ function HomeCTA({ go }) {
         gridTemplateColumns: "1fr 1.15fr",
         gap: "min(40px, 4vw)",
         alignItems: "end"
-      }}>
+      }} className="cta-grid">
         <div className="t-mono" style={{ alignSelf: "start" }}>§ 07 — Início</div>
         <div style={{ position: "relative", marginLeft: "-6vw" }}>
           <h2 className="t-display" style={{

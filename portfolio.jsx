@@ -3,7 +3,7 @@
 function PortfolioHeader() {
   return (
     <section style={{ padding: "calc(var(--nav-h) + 64px) var(--pad-x) 36px" }}>
-      <div className="reveal" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(80px, 6vw)" }}>
+      <div className="reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(80px, 6vw)" }}>
         <div className="t-mono"></div>
         <div>
           <h1 className="t-display" style={{ margin: 0, maxWidth: "14ch", letterSpacing: "-0.02em" }}>
@@ -108,18 +108,18 @@ function PortfolioGrid() {
           const hero = mod[0];
           const smalls = mod.slice(1, 5);
           return (
-            <div key={mi} className="reveal" style={{
+            <div key={mi} className="reveal" data-portfolio-module="" style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
               columnGap: GAP,
               height: "min(58vh, 520px)"
             }}>
               {/* Hero column */}
-              <div style={{ order: heroLeft ? 1 : 2, height: "100%", minHeight: 0 }}>
+              <div data-portfolio-hero="" style={{ order: heroLeft ? 1 : 2, height: "100%", minHeight: 0 }}>
                 <ProjectTile p={hero} idx={mi * 5} fill />
               </div>
               {/* 2×2 column */}
-              <div style={{
+              <div data-portfolio-smalls="" style={{
                 order: heroLeft ? 2 : 1,
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",

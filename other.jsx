@@ -3,7 +3,7 @@
 function ContactsHeader() {
   return (
     <section style={{ padding: "calc(var(--nav-h) + 80px) var(--pad-x) 60px" }}>
-      <div className="reveal" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", alignItems: "stretch" }}>
+      <div className="reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", alignItems: "stretch" }}>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div className="t-mono" style={{ marginBottom: 24 }}>CONTACTOS</div>
           <div style={{
@@ -81,7 +81,7 @@ function ContactForm() {
 
   return (
     <section style={{ padding: "40px var(--pad-x) 120px" }}>
-      <div className="reveal" style={{
+      <div className="reveal" data-mobile-stack="" style={{
         display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)",
         borderTop: "1px solid var(--line)", paddingTop: 48
       }}>
@@ -93,7 +93,7 @@ function ContactForm() {
         </div>
 
         <form onSubmit={(e) => {e.preventDefault();if (valid) setSent(true);}} style={{ maxWidth: 760 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginBottom: 8 }}>
+          <div className="form-row-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginBottom: 8 }}>
             <div>
               <label style={lblS}>01 — Nome</label>
               <input style={fld} value={data.nome} onChange={(e) => set("nome", e.target.value)}
@@ -106,7 +106,7 @@ function ContactForm() {
             </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 18 }}>
+          <div className="form-row-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 18 }}>
             <div>
               <label style={lblS}>03 — Atelier / Organização</label>
               <input style={fld} value={data.organizacao} onChange={(e) => set("organizacao", e.target.value)}
@@ -158,7 +158,7 @@ function ContactInfo() {
       <div style={{
         display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "var(--line)",
         borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)"
-      }}>
+      }} className="contact-info-grid">
         {[
         { l: "Morada", v: ["Parque Industrial Lote 50", "3045-504 Taveiro", "Portugal"] },
         { l: "Telefone", v: ["239 983 022", "Fax: 239 983 025"] },
@@ -201,7 +201,7 @@ function ClientPage({ go }) {
         flex: 1, position: "relative",
         display: "grid", gridTemplateColumns: "1fr 1fr",
         minHeight: "calc(100vh - var(--nav-h))"
-      }}>
+      }} className="client-grid">
         <div style={{
           padding: "max(120px, 12vh) var(--pad-x) 80px",
           display: "flex", flexDirection: "column", justifyContent: "space-between",
@@ -238,7 +238,7 @@ function ClientPage({ go }) {
           </div>
         </div>
 
-        <div style={{ position: "relative", overflow: "hidden", background: "#1B1A18" }}>
+        <div className="client-image-col" style={{ position: "relative", overflow: "hidden", background: "#1B1A18" }}>
           <img
             src="assets/hero/client.png"
             alt=""

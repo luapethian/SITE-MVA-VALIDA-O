@@ -376,6 +376,167 @@
   @media(max-width:880px){
     footer.foot .ftop{ grid-template-columns:1fr 1fr; gap:32px; padding-bottom:48px; }
   }
+  @media(max-width:520px){
+    footer.foot .ftop{ grid-template-columns:1fr; gap:28px; padding-bottom:40px; }
+    footer.foot{ padding-top:64px; }
+    footer.foot .fbot{ flex-direction:column; gap:8px; }
+  }
+
+  /* ── Mobile nav hamburger ── */
+  .nav-hamburger{
+    display:none;
+    flex-direction:column; gap:5px; justify-content:center;
+    width:36px; height:36px; padding:4px;
+    margin-left:auto; cursor:pointer;
+    background:none; border:none;
+  }
+  .nav-hamburger span{
+    display:block; height:1px; background:currentColor;
+    transition:transform .3s var(--ease), opacity .3s var(--ease);
+  }
+  .nav-hamburger.open span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2){ opacity:0; }
+  .nav-hamburger.open span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+  .nav-drawer{
+    display:none;
+    position:fixed; top:var(--nav-h); left:0; right:0; bottom:0;
+    background:var(--bg); z-index:49;
+    flex-direction:column;
+    padding:40px var(--pad-x) 60px;
+    overflow-y:auto;
+  }
+  .nav-drawer.open{ display:flex; }
+  .nav-drawer a{
+    font-size:clamp(28px,7vw,40px); font-weight:300; letter-spacing:-0.02em;
+    padding:18px 0; border-bottom:1px solid var(--line);
+    opacity:.9;
+  }
+  .nav-drawer a.on{ opacity:1; }
+
+  @media(max-width:760px){
+    .nav-links{ display:none; }
+    .nav-hamburger{ display:flex; }
+  }
+
+  /* ── Mobile layout fixes ── */
+  @media(max-width:760px){
+    /* 2-col → 1-col grids */
+    [data-mobile-stack]{
+      grid-template-columns:1fr !important;
+      gap:32px !important;
+    }
+
+    /* FeaturedMaterials — reduce image height */
+    .mat-card-img{ min-height:260px !important; height:52vw !important; }
+
+    /* ApplicationsBlock list rows */
+    .app-row{
+      grid-template-columns:1fr !important;
+      gap:6px !important;
+      padding:28px 0 !important;
+    }
+    .app-row .app-desc{ display:none; }
+    .app-row .app-arr{ display:none; }
+
+    /* ProcessBlock & ContactInfo — 4-col → 2-col */
+    [data-mobile-2col]{
+      grid-template-columns:repeat(2,1fr) !important;
+    }
+
+    /* Portfolio grid — 2-col modules */
+    [data-portfolio-module]{
+      grid-template-columns:1fr !important;
+      height:auto !important;
+    }
+    [data-portfolio-smalls]{
+      grid-template-columns:1fr 1fr !important;
+      grid-template-rows:auto auto !important;
+      height:auto !important;
+    }
+    [data-portfolio-module] [data-portfolio-smalls] > div{
+      aspect-ratio: 1/1;
+      height:auto !important;
+    }
+    [data-portfolio-hero]{
+      height:56vw !important;
+      aspect-ratio: unset !important;
+    }
+
+    /* CategoryCard (Products) — always 1 col */
+    .cat-card{
+      grid-template-columns:1fr !important;
+      padding:56px 0 !important;
+    }
+    .cat-card-img{
+      order:1 !important;
+      height:56vw !important;
+      min-height:0 !important;
+    }
+    .cat-card-text{
+      order:2 !important;
+      padding:0 !important;
+    }
+
+    /* CategoryBrandSection */
+    .brand-section-grid{
+      grid-template-columns:1fr !important;
+    }
+    .brand-section-sticky{
+      position:static !important;
+      padding-bottom:32px !important;
+    }
+    .brand-materials-grid{
+      grid-template-columns:1fr 1fr !important;
+      column-gap:14px !important;
+      row-gap:14px !important;
+    }
+
+    /* Contacts form — 2-col fields → 1-col */
+    .form-row-2{
+      grid-template-columns:1fr !important;
+      gap:0 !important;
+    }
+
+    /* ContactInfo 4-col → 2-col */
+    .contact-info-grid{
+      grid-template-columns:1fr 1fr !important;
+    }
+
+    /* Client page — 2-col → 1-col */
+    .client-grid{
+      grid-template-columns:1fr !important;
+      min-height:auto !important;
+    }
+    .client-image-col{ height:56vw; min-height:0 !important; }
+
+    /* HomeCTA */
+    .cta-bg-img{ display:none !important; }
+    .cta-grid{
+      grid-template-columns:1fr !important;
+    }
+
+    /* EditorialPull & ArchitectureInMatter — keep as-is via data-mobile-stack */
+
+    /* ArchitectureInMatter gallery: 3-col → 1-col */
+    .arch-3col{
+      grid-template-columns:1fr !important;
+    }
+    .arch-3col > div{ aspect-ratio:4/3 !important; }
+  }
+
+  @media(max-width:480px){
+    /* ProcessBlock & ContactInfo 2-col → 1-col on very small screens */
+    [data-mobile-2col]{
+      grid-template-columns:1fr !important;
+    }
+    .contact-info-grid{
+      grid-template-columns:1fr !important;
+    }
+    .brand-materials-grid{
+      grid-template-columns:1fr !important;
+    }
+  }
 </style>
 </head>
 <body data-theme="dark">

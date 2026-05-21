@@ -21,7 +21,7 @@ function ProductsGatewayHeader(){
         background:"linear-gradient(90deg, rgba(14,14,12,.78) 0%, rgba(14,14,12,.55) 45%, rgba(14,14,12,.30) 100%), linear-gradient(180deg, rgba(14,14,12,.25) 0%, rgba(14,14,12,0) 30%, rgba(14,14,12,0) 70%, rgba(14,14,12,.35) 100%)",
         pointerEvents:"none"
       }} />
-      <div className="reveal" style={{ position:"relative", display:"grid", gridTemplateColumns:"1fr 2fr", gap:"min(120px, 8vw)" }}>
+      <div className="reveal" data-mobile-stack="" style={{ position:"relative", display:"grid", gridTemplateColumns:"1fr 2fr", gap:"min(120px, 8vw)" }}>
         <div className="t-mono" style={{ color:"rgba(244,242,238,.7)" }}>Produtos · Cinco universos</div>
         <div>
           <h1 className="t-display" style={{margin:0, maxWidth:"14ch", color:"#F4F2EE"}}>
@@ -46,6 +46,7 @@ function CategoryCard({ cat, idx, go }){
       onClick={(e)=>{e.preventDefault(); go("products/"+cat.id);}}
       onMouseEnter={()=>setHover(true)}
       onMouseLeave={()=>setHover(false)}
+      className="cat-card"
       style={{
         display:"grid",
         gridTemplateColumns: isOdd ? "1fr 1.4fr" : "1.4fr 1fr",
@@ -55,7 +56,7 @@ function CategoryCard({ cat, idx, go }){
         alignItems:"center"
       }}>
       {/* image */}
-      <div style={{ order: isOdd ? 2 : 1, position:"relative", overflow:"hidden", height:"68vh", minHeight:480, background:"#1B1A18" }}>
+      <div className="cat-card-img" style={{ order: isOdd ? 2 : 1, position:"relative", overflow:"hidden", height:"68vh", minHeight:480, background:"#1B1A18" }}>
         {cat.image ? (
           <>
             <div style={{
@@ -102,7 +103,7 @@ function CategoryCard({ cat, idx, go }){
       </div>
 
       {/* text column */}
-      <div style={{ order: isOdd ? 1 : 2, padding:isOdd ? "0 0 0 4vw" : "0 4vw 0 0" }}>
+      <div className="cat-card-text" style={{ order: isOdd ? 1 : 2, padding:isOdd ? "0 0 0 4vw" : "0 4vw 0 0" }}>
         <div className="t-mono" style={{ marginBottom:24 }}>
           {cat.n} — Família
         </div>
@@ -164,7 +165,7 @@ function ProductsGateway({ go }){
 
       {/* Closing editorial */}
       <section className="container reveal" style={{ padding:"96px var(--pad-x) 120px" }}>
-        <div style={{ display:"grid", gridTemplateColumns:"1fr 2fr", gap:"min(120px, 8vw)" }}>
+        <div data-mobile-stack="" style={{ display:"grid", gridTemplateColumns:"1fr 2fr", gap:"min(120px, 8vw)" }}>
           <div className="t-mono">— Selecção dedicada</div>
           <div>
             <h2 className="t-h1" style={{margin:0, fontWeight:300, maxWidth:"22ch"}}>
@@ -332,9 +333,9 @@ function CategoryBrandSection({ cat, brand, idx }){
         borderTop:"1px solid var(--line)", paddingTop:48,
         display:"grid", gridTemplateColumns:"minmax(0, 1.7fr) minmax(0, 1fr)", gap:"min(80px, 6vw)",
         alignItems:"start"
-      }}>
+      }} className="brand-section-grid">
         {/* LEFT — 3 material cards */}
-        <div style={{
+        <div className="brand-materials-grid" style={{
           display:"grid",
           gridTemplateColumns:"repeat(3, 1fr)",
           columnGap:24, rowGap:24
@@ -345,7 +346,7 @@ function CategoryBrandSection({ cat, brand, idx }){
         </div>
 
         {/* RIGHT — institutional text, sticky */}
-        <div style={{ position:"sticky", top:"calc(var(--nav-h) + 40px)", paddingTop:8 }}>
+        <div className="brand-section-sticky" style={{ position:"sticky", top:"calc(var(--nav-h) + 40px)", paddingTop:8 }}>
           <div className="t-mono" style={{ marginBottom:24 }}>Colecção · 0{idx+1}</div>
           <h3 style={{
             margin:0, fontWeight:300,
@@ -435,7 +436,7 @@ function CategoryAdjacents({ cat, go }){
   const next = CATEGORIES[(idx+1) % CATEGORIES.length];
   return (
     <section className="surface-deep" style={{ padding:"160px var(--pad-x)" }}>
-      <div className="reveal" style={{
+      <div className="reveal" data-mobile-stack="" style={{
         display:"grid", gridTemplateColumns:"1fr 1fr", gap:"min(80px, 6vw)", alignItems:"end"
       }}>
         <div>

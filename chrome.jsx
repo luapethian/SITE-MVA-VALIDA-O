@@ -45,6 +45,7 @@ function Brand({ onClick }) {
 // ───────────────────────────── Nav
 function Nav({ route, go }) {
   const { scrolled } = useScroll();
+  const [open, setOpen] = useState(false);
   const items = [
   { id: "home", label: "Início" },
   { id: "products", label: "Produtos" },
@@ -52,20 +53,46 @@ function Nav({ route, go }) {
   { id: "contacts", label: "Contactos" },
   { id: "client", label: "Área de Cliente" }];
 
+  const navigate = (id) => { go(id); setOpen(false); };
+
+  // Prevent body scroll when drawer is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
-    <nav className={"nav-root" + (scrolled ? " scrolled" : "")}>
-      <Brand onClick={(e) => {e.preventDefault();go("home");}} />
-      <div className="nav-links">
+    <>
+      <nav className={"nav-root" + (scrolled ? " scrolled" : "")}>
+        <Brand onClick={(e) => {e.preventDefault();navigate("home");}} />
+        <div className="nav-links">
+          {items.map((it) =>
+          <a key={it.id} href={"#/" + it.id}
+          onClick={(e) => {e.preventDefault();navigate(it.id);}}
+          className={"nav-link" + (route === it.id ? " on" : "")}>
+              {it.label}
+            </a>
+          )}
+        </div>
+        <button
+          className={"nav-hamburger" + (open ? " open" : "")}
+          onClick={() => setOpen(v => !v)}
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={open}>
+          <span /><span /><span />
+        </button>
+      </nav>
+      <div className={"nav-drawer" + (open ? " open" : "")}>
         {items.map((it) =>
-        <a key={it.id} href={"#/" + it.id}
-        onClick={(e) => {e.preventDefault();go(it.id);}}
-        className={"nav-link" + (route === it.id ? " on" : "")}>
+          <a key={it.id} href={"#/" + it.id}
+          onClick={(e) => {e.preventDefault();navigate(it.id);}}
+          className={route === it.id ? " on" : ""}>
             {it.label}
           </a>
         )}
       </div>
-    </nav>);
-
+    </>
+  );
 }
 
 // ───────────────────────────── Sticky scroll meta (current section + counter)
