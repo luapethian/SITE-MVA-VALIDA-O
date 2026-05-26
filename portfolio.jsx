@@ -66,7 +66,7 @@ function ProjectTile({ p, idx, aspect, fill }) {
           position: "absolute", inset: 0,
           background: "linear-gradient(180deg, rgba(27,26,24,0) 40%, rgba(27,26,24,.45) 100%)",
           opacity: hover ? 1 : 0,
-          transition: "opacity .6s var(--ease)", padding: "0px", margin: "0px", borderStyle: "solid", borderWidth: "0px", width: "510px"
+          transition: "opacity .6s var(--ease)"
         }} />
       </div>
     </a>);

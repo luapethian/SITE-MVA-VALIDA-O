@@ -422,154 +422,132 @@
   /* ── Mobile layout fixes ── */
   @media(max-width:760px){
 
-    /* Hero CTA — texto sai fora do ecrã */
+    /* Hero CTA */
     .home-cta-grid{
       grid-template-columns:1fr !important;
       gap:24px !important;
     }
-    .home-cta-text{
-      margin-left:0 !important;
-    }
+    .home-cta-text{ margin-left:0 !important; }
     .home-cta-img{ display:none !important; }
+    .home-cta-img-mobile{ display:block !important; }
 
     /* 2-col → 1-col grids */
     [data-mobile-stack]{
       grid-template-columns:1fr !important;
-      gap:32px !important;
+      gap:24px !important;
     }
 
-    /* FeaturedMaterials — header flex wrap */
+    /* FeaturedMaterials header */
     .feat-mat-header{
       flex-direction:column !important;
       align-items:flex-start !important;
-      gap:16px !important;
+      gap:12px !important;
     }
-
-    /* FeaturedMaterials — reduce image height */
     .mat-card-img{ height:52vw !important; min-height:0 !important; }
 
     /* ApplicationsBlock rows */
     .app-row{
       grid-template-columns:60px 1fr !important;
       gap:6px !important;
-      padding:24px 0 !important;
+      padding:20px 0 !important;
     }
     .app-row .app-desc{ display:none !important; }
     .app-row .app-arr{ display:none !important; }
 
-    /* ProcessBlock & ContactInfo — 4-col → 2-col */
-    [data-mobile-2col]{
-      grid-template-columns:repeat(2,1fr) !important;
-    }
+    /* ApplicationsBlock imagem */
+    .app-block-img{ min-height:44vw !important; }
 
-    /* ArchitectureInMatter gallery */
+    /* ProcessBlock & ContactInfo 4-col → 2-col */
+    [data-mobile-2col]{ grid-template-columns:repeat(2,1fr) !important; }
+
+    /* ArchitectureInMatter */
     .arch-wide{ aspect-ratio:16/9 !important; }
-    .arch-3col{
-      grid-template-columns:1fr !important;
-    }
+    .arch-3col{ grid-template-columns:1fr !important; }
     .arch-3col > div{ aspect-ratio:4/3 !important; }
 
-    /* Portfolio grid */
+    /* Reduz padding das secções surface-deep em mobile */
+    .surface-deep{ padding-top:56px !important; padding-bottom:56px !important; }
+    .surface-deep > .container{ padding-top:0 !important; padding-bottom:0 !important; }
+
+    /* ANEXO 1 — ProcessBlock: espaço entre "Aplicação em obra" e imagem abaixo */
+    /* O ProcessBlock tem padding: "40px var(--pad-x) 160px" — reduz padding bottom */
+    .process-section{ padding-bottom:60px !important; }
+
+    /* ANEXO 2 — ProcessBlock: espaço entre "Quatro fases" e "Selecção em pedreira" */
+    /* O grid header tem marginBottom: 80 — reduz em mobile */
+    .process-header{ margin-bottom:32px !important; }
+    /* A imagem do processo tem minHeight: 260 — reduz */
+    .process-img{ min-height:52vw !important; max-height:56vw !important; }
+
+    /* ANEXO 3 — espaço entre galeria de aplicações e secção Espaços */
+    /* ArchitectureInMatter tem padding: "100px 0" e ApplicationsBlock tem padding: "100px" */
+    .arch-section{ padding-bottom:40px !important; }
+    .apps-section{ padding-top:40px !important; }
+
+    /* ANEXO 4 — EditorialPull: espaço entre "Actualidade" e "Arquitectura em matéria" */
+    /* A imagem tem minHeight: 280 — reduz, e padding da secção */
+    .editorial-img{ min-height:52vw !important; max-height:56vw !important; }
+
+    /* ANEXO 5 — FeaturedMaterials: espaço entre "Cubas MVA" e imagem abaixo */
+    /* FeaturedMaterials tem padding: "40px 0 140px" — reduz padding bottom */
+    .feat-mat-section{ padding-bottom:60px !important; }
+
+    /* ── Portfolio grid — SOLUÇÃO DEFINITIVA ── */
+    /* Módulo colapsa para coluna única */
     [data-portfolio-module]{
       grid-template-columns:1fr !important;
       height:auto !important;
+      row-gap:8px !important;
     }
+    /* Hero — proporção fixa, sem fill */
     [data-portfolio-hero]{
-      height:56vw !important;
+      height:auto !important;
+      aspect-ratio:4/3 !important;
     }
+    [data-portfolio-hero] a,
+    [data-portfolio-hero] a > div{
+      height:100% !important;
+      aspect-ratio:4/3 !important;
+    }
+    /* Smalls — grid 2x2 com proporção fixa */
     [data-portfolio-smalls]{
       grid-template-columns:1fr 1fr !important;
-      grid-template-rows:auto auto !important;
+      grid-template-rows:auto !important;
       height:auto !important;
     }
     [data-portfolio-smalls] > div{
-      aspect-ratio:1/1 !important;
       height:auto !important;
+      aspect-ratio:1/1 !important;
     }
-
-    /* Portfolio header — imagem em cima, texto em baixo */
-    .portfolio-header-grid{
-      grid-template-columns:1fr !important;
-    }
-    .portfolio-header-img{
-      min-height:52vw !important;
-      position:relative !important;
-    }
-
-    /* CategoryCard (Products) */
-    .cat-card{
-      grid-template-columns:1fr !important;
-      padding:48px 0 !important;
-    }
-    .cat-card-img{
-      order:1 !important;
-      height:56vw !important;
-      min-height:0 !important;
-    }
-    .cat-card-text{
-      order:2 !important;
-      padding:0 !important;
-    }
-
-    /* CategoryBrandSection */
-    .brand-section-grid{
-      grid-template-columns:1fr !important;
-    }
-    .brand-section-sticky{
-      position:static !important;
-      padding-bottom:24px !important;
-    }
-    .brand-materials-grid{
-      grid-template-columns:1fr 1fr !important;
-    }
-
-    /* Contacts form */
-    .form-row-2{
-      grid-template-columns:1fr !important;
-      gap:0 !important;
-    }
-    .contact-info-grid{
-      grid-template-columns:1fr 1fr !important;
-    }
-
-    /* Client page — imagem no TOPO */
-    .client-grid{
-      grid-template-columns:1fr !important;
-      min-height:auto !important;
-    }
-    .client-image-col{
-      order:-1 !important;
-      height:56vw !important;
-      min-height:0 !important;
-    }
-    .client-text-col{
-      padding-top:48px !important;
-      padding-bottom:48px !important;
-    }
-
-    /* Espaços vazios excessivos — reduz padding em mobile */
-    .mobile-pad-reduce{
-      padding-top:60px !important;
-      padding-bottom:60px !important;
-    }
-
-    /* ApplicationsBlock imagem — altura proporcional */
-    .app-block-img{
-      min-height:48vw !important;
-    }
-
-    /* HomeCTA — mostrar imagem mobile */
-    .home-cta-img-mobile{ display:block !important; }
-
-    /* Portfolio — smalls tiles precisam de altura explícita */
     [data-portfolio-smalls] > div > a,
     [data-portfolio-smalls] > div > a > div{
       height:100% !important;
+      aspect-ratio:1/1 !important;
     }
-    [data-portfolio-smalls] > div{
-      height:40vw !important;
-      aspect-ratio:unset !important;
-    }
+
+    /* Portfolio header */
+    .portfolio-header-grid{ grid-template-columns:1fr !important; }
+    .portfolio-header-img{ min-height:52vw !important; position:relative !important; }
+
+    /* CategoryCard */
+    .cat-card{ grid-template-columns:1fr !important; padding:40px 0 !important; }
+    .cat-card-img{ order:1 !important; height:56vw !important; min-height:0 !important; }
+    .cat-card-text{ order:2 !important; padding:0 !important; }
+
+    /* CategoryBrandSection */
+    .brand-section-grid{ grid-template-columns:1fr !important; }
+    .brand-section-sticky{ position:static !important; padding-bottom:24px !important; }
+    .brand-materials-grid{ grid-template-columns:1fr 1fr !important; }
+
+    /* Contacts */
+    .form-row-2{ grid-template-columns:1fr !important; gap:0 !important; }
+    .contact-info-grid{ grid-template-columns:1fr 1fr !important; }
+
+    /* Client page */
+    .client-grid{ grid-template-columns:1fr !important; min-height:auto !important; }
+    .client-image-col{ order:-1 !important; height:56vw !important; min-height:0 !important; }
+    .client-text-col{ padding-top:48px !important; padding-bottom:48px !important; }
+  }
   }
 
   @media(max-width:480px){
@@ -581,6 +559,24 @@
     }
     .brand-materials-grid{
       grid-template-columns:1fr !important;
+    }
+  }
+
+  @media(max-width:760px){
+    /* Reduz padding das secções com fundo escuro */
+    .editorial-section,
+    .arch-section{
+      padding:56px 0 !important;
+    }
+    /* ProcessBlock padding */
+    .container[style*="padding: 40px"]{
+      padding-top:40px !important;
+      padding-bottom:80px !important;
+    }
+    /* HomeCTA padding */
+    .reveal[style*="padding: 90px"]{
+      padding-top:48px !important;
+      padding-bottom:48px !important;
     }
   }
 </style>

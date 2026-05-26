@@ -215,7 +215,7 @@ function FeaturedMaterials({ go }) {
   { image: "assets/home/integrity.png", name: "Cubas MVA", desc: "Lavatório e bancada, um só gesto.", slug: "pias-integrity" }];
 
   return (
-    <section style={{ padding: "40px 0 140px" }}>
+    <section className="feat-mat-section" style={{ padding: "40px 0 140px" }}>
       <div className="container reveal feat-mat-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48 }}>
         <div>
           <div className="t-mono" style={{ marginBottom: 18, opacity: "0" }}>§ 02 — Materiais</div>
@@ -284,7 +284,7 @@ function EditorialPull() {
         display: "grid", gridTemplateColumns: "minmax(0, 1.45fr) minmax(0, 1fr)", gap: "min(80px, 6vw)", alignItems: "stretch"
       }} data-mobile-stack="">
         {/* Left visual card — height-matched to text column */}
-        <div style={{ position: "relative", overflow: "hidden", width: "100%", background: "#1B1A18", minHeight: 280 }}>
+        <div className="editorial-img" style={{ position: "relative", overflow: "hidden", width: "100%", background: "#1B1A18", minHeight: 280 }}>
           <img src="assets/actualidade.png" alt="Actualidade MVA" style={{
             position: "absolute", inset: 0,
             width: "100%", height: "100%",
@@ -336,7 +336,7 @@ function EditorialPull() {
 // ─── § 04 Arquitectura em matéria — timeless showcase (no client/year)
 function ArchitectureInMatter({ go }) {
   return (
-    <section className="surface-deep" style={{ padding: "100px 0", color: "var(--bg)" }}>
+    <section className="surface-deep arch-section" style={{ padding: "100px 0", color: "var(--bg)" }}>
       <div className="container reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "min(80px, 6vw)", alignItems: "end", marginBottom: 60 }}>
         <div>
           <div className="t-mono" style={{ color: "rgba(244,242,238,.6)", marginBottom: 18, opacity: "0" }}>§ 04 — Aplicações</div>
@@ -391,7 +391,7 @@ function ApplicationsBlock({ go }) {
   { id: "exterior", n: "04", label: "Exterior", desc: "Fachada ventilada, pátio, escada exterior." }];
 
   return (
-    <section className="container reveal" style={{ padding: "100px var(--pad-x)" }}>
+    <section className="container reveal apps-section" style={{ padding: "100px var(--pad-x)" }}>
       <div data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 64, alignItems: "stretch" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 16, minHeight: 0 }}>
           <div className="t-mono" style={{ opacity: "0" }}>§ 05 — Espaços</div>
@@ -439,11 +439,11 @@ function ApplicationsBlock({ go }) {
 // ─── § 06 Processo
 function ProcessBlock() {
   return (
-    <section className="container" style={{ padding: "40px var(--pad-x) 160px" }}>
-      <div className="reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 80, alignItems: "stretch" }}>
+    <section className="container process-section" style={{ padding: "40px var(--pad-x) 160px" }}>
+      <div className="reveal process-header" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 80, alignItems: "stretch" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 16, minHeight: 0 }}>
           <div className="t-mono" style={{ opacity: "0" }}>§ 06 — Processo</div>
-          <div style={{ position: "relative", overflow: "hidden", flexGrow: 1, minHeight: 260 }}>
+          <div className="process-img" style={{ position: "relative", overflow: "hidden", flexGrow: 1, minHeight: 260 }}>
             <img src="assets/processo-hero.avif" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", display: "block" }} />
           </div>
         </div>
