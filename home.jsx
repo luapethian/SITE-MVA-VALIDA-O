@@ -284,7 +284,7 @@ function EditorialPull() {
         display: "grid", gridTemplateColumns: "minmax(0, 1.45fr) minmax(0, 1fr)", gap: "min(80px, 6vw)", alignItems: "stretch"
       }} data-mobile-stack="">
         {/* Left visual card — height-matched to text column */}
-        <div style={{ position: "relative", overflow: "hidden", width: "100%", background: "#1B1A18", minHeight: 0 }}>
+        <div style={{ position: "relative", overflow: "hidden", width: "100%", background: "#1B1A18", minHeight: 280 }}>
           <img src="assets/actualidade.png" alt="Actualidade MVA" style={{
             position: "absolute", inset: 0,
             width: "100%", height: "100%",
@@ -443,7 +443,7 @@ function ProcessBlock() {
       <div className="reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 80, alignItems: "stretch" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 16, minHeight: 0 }}>
           <div className="t-mono" style={{ opacity: "0" }}>§ 06 — Processo</div>
-          <div style={{ position: "relative", overflow: "hidden", flexGrow: 1 }}>
+          <div style={{ position: "relative", overflow: "hidden", flexGrow: 1, minHeight: 260 }}>
             <img src="assets/processo-hero.avif" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", display: "block" }} />
           </div>
         </div>
@@ -505,6 +505,18 @@ function HomeCTA({ go }) {
         backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
+        filter: "saturate(.95) contrast(1.04) brightness(.92)"
+      }} />
+      {/* Mobile-only image — shows when absolute one is hidden */}
+      <div className="home-cta-img-mobile" style={{
+        display: "none",
+        width: "100%",
+        aspectRatio: "16/9",
+        overflow: "hidden",
+        backgroundImage: 'url("assets/home/desenhar.png")',
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
+        marginBottom: 32,
         filter: "saturate(.95) contrast(1.04) brightness(.92)"
       }} />
 

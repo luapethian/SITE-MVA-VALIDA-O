@@ -557,6 +557,19 @@
     .app-block-img{
       min-height:48vw !important;
     }
+
+    /* HomeCTA — mostrar imagem mobile */
+    .home-cta-img-mobile{ display:block !important; }
+
+    /* Portfolio — smalls tiles precisam de altura explícita */
+    [data-portfolio-smalls] > div > a,
+    [data-portfolio-smalls] > div > a > div{
+      height:100% !important;
+    }
+    [data-portfolio-smalls] > div{
+      height:40vw !important;
+      aspect-ratio:unset !important;
+    }
   }
 
   @media(max-width:480px){

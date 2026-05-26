@@ -10,7 +10,7 @@ function ContactsHeader() {
             position: "relative",
             width: "100%",
             flex: "1 1 auto",
-            minHeight: 0,
+            minHeight: 280,
             overflow: "hidden",
             background: "#1B1A18"
           }}>
@@ -19,10 +19,10 @@ function ContactsHeader() {
               alt=""
               style={{
                 position: "absolute", inset: 0,
-
+                width: "100%", height: "100%",
                 objectFit: "cover",
                 objectPosition: "center bottom",
-                display: "block", padding: "0px", margin: "0px", width: "615px", height: "516px"
+                display: "block"
               }} />
           </div>
         </div>
