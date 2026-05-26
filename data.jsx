@@ -61,10 +61,10 @@ const CATEGORIES = [
       },
       {
         id: "marmores-sensa",
-        label: "Mármores Sensa",
+        label: "Sensa",
         desc: "Pedras naturais com tratamento de protecção avançado, para maior resistência e estabilidade da superfície a longo prazo.",
         secondary: "Referências adicionais disponíveis sob consulta.",
-        link: { label: "Tudo sobre Mármores Sensa", href: "#" },
+        link: { label: "Tudo sobre Mármores Sensa", href: "https://www.cosentino.com/pt-pt/sensa/" },
         materials: [
           { id:"sensa-taj-mahal", name:"Sensa Taj Mahal", category:"Mármore Sensa", origin:"Brasil",   stone:2, color:"cream", image:"assets/Mármore sensa Taj Mahal.png" },
           { id:"sensa-orinoco",  name:"Sensa Orinoco",  category:"Mármore Sensa", origin:"Brasil",   stone:5, color:"warm",  image:"assets/Mármore sensa Orinoco.png" },
@@ -92,7 +92,7 @@ const CATEGORIES = [
         label: "Silestone",
         desc: "Acabamentos minerais em quartzo Híbrido, com superfícies de baixo impacto.",
         secondary: "Visite o nosso showroom para descobrir mais referências.",
-        link: { label: "Tudo sobre Silestone", href: "#" },
+        link: { label: "Tudo sobre Silestone", href: "https://www.cosentino.com/pt-pt/silestone/" },
         materials: [
           { id:"sil-calacatta-gold",   name:"Silestone Calacatta Gold", origin:"Cosentino", stone:1, color:"cream", image:"assets/Silestone calacatta gold.png" },
           { id:"sil-desert-silver",    name:"Silestone Desert Silver",  origin:"Cosentino", stone:5, color:"mid",   image:"assets/Silestone desert silver.png" },
@@ -106,7 +106,7 @@ const CATEGORIES = [
         label: "Compac",
         desc: "Quartzo técnico de origem espanhola, formatos extra-grandes.",
         secondary: "Visite o nosso showroom para descobrir mais referências.",
-        link: { label: "Tudo sobre Compac", href: "#" },
+        link: { label: "Tudo sobre Compac", href: "https://pt.compac.es/quartzo/" },
         materials: [
           { id:"compac-moon",          name:"Compac Moon",        origin:"Compac", stone:5, color:"cream", image:"assets/Compac moon.png" },
           { id:"compac-carrara",       name:"Compac Carrara",     origin:"Compac", stone:1, color:"cream", image:"assets/Compac Carrara.png" },
@@ -135,7 +135,7 @@ const CATEGORIES = [
         label: "Dekton",
         desc: "Superfície ultracompacta. Aplicação interior, exterior e fachada.",
         secondary: "Visite o nosso showroom para descobrir mais referências.",
-        link: { label: "Tudo sobre Dekton", href: "#" },
+        link: { label: "Tudo sobre Dekton", href: "https://www.cosentino.com/pt-pt/dekton/" },
         materials: [
           { id:"dekton-awake",   name:"Dekton Awake",   origin:"Cosentino", stone:6, color:"dark",  image:"assets/Dekton Awake.png" },
           { id:"dekton-laurent", name:"Dekton Laurent", origin:"Cosentino", stone:1, color:"cream", image:"assets/Dekton Laurent.png" },
@@ -149,7 +149,7 @@ const CATEGORIES = [
         label: "Neolith",
         desc: "Pedra sinterizada, formatos até 3.6 m. Linguagem mineral contemporânea.",
         secondary: "Visite o nosso showroom para descobrir mais referências.",
-        link: { label: "Tudo sobre Neolith", href: "#" },
+        link: { label: "Tudo sobre Neolith", href: "https://www.neolith.com/" },
         materials: [
           { id:"neo-abu-dhabi",       name:"Neolith Abu Dhabi",       origin:"Neolith", stone:1, color:"cream", image:"assets/Neolith Abu Dhabi.png" },
           { id:"neo-calacatta-roma",  name:"Neolith Calacatta Roma",  origin:"Neolith", stone:8, color:"mid",   image:"assets/Neolith Calacatta Roma.png" },
@@ -162,7 +162,7 @@ const CATEGORIES = [
         label: "Coverlam",
         desc: "Grandes formatos cerâmicos, aplicações de elevada exigência.",
         secondary: "Visite o nosso showroom para descobrir mais referências.",
-        link: { label: "Tudo sobre Coverlam", href: "#" },
+        link: { label: "Tudo sobre Coverlam", href: "https://www.coverlambygrespania.com/" },
         materials: [
           { id:"cov-blue-roma",   name:"Coverlam Blue Roma",   origin:"Coverlam", stone:5, color:"cream", image:"assets/Coverlam Blue Roma.png" },
           { id:"cov-canela-roma", name:"Coverlam Canela Roma", origin:"Coverlam", stone:7, color:"deep",  image:"assets/Coverlam Canela Roma.png" },
@@ -190,7 +190,7 @@ const CATEGORIES = [
         label: "Corian",
         desc: "A referência original em superfície sólida acrílica.",
         secondary: "Visite o nosso showroom para descobrir mais referências.",
-        link: { label: "Tudo sobre Corian", href: "#" },
+        link: { label: "Tudo sobre Corian", href: "https://www.corian.pt/" },
         materials: [
           { id:"cor-glacier-white",  name:"Corian Glacier White",  origin:"Corian", stone:4, color:"cream", image:"assets/Corian Glacier White.png" },
           { id:"cor-designer-white", name:"Corian Designer White", origin:"Corian", stone:4, color:"cream", image:"assets/Corian Designer White.png" },
@@ -202,7 +202,7 @@ const CATEGORIES = [
         label: "Krion",
         desc: "Mineral compacto de Porcelanosa. Comportamento higiénico e ecológico.",
         secondary: "Visite o nosso showroom para descobrir mais referências.",
-        link: { label: "Tudo sobre Krion", href: "#" },
+        link: { label: "Tudo sobre Krion", href: "https://www.porcelanosa.com/pt/revestimento/krion/" },
         materials: [
           { id:"krion-snow-white",     name:"Krion Snow White",     origin:"Krion", stone:4, color:"cream", image:"assets/Krion Snow White.png" },
           { id:"krion-natura",         name:"Krion Natura",         origin:"Krion", stone:5, color:"cream", image:"assets/Krion Natura.png" },
@@ -214,7 +214,7 @@ const CATEGORIES = [
         label: "Staron",
         desc: "Superfície sólida coreana, palete extensa e termo-formação avançada.",
         secondary: "Visite o nosso showroom para descobrir mais referências.",
-        link: { label: "Tudo sobre Staron", href: "#" },
+        link: { label: "Tudo sobre Staron", href: "https://www.granitrans.pt/staron/" },
         materials: [
           { id:"staron-solid-pure-white", name:"Staron Solid Pure White", origin:"Staron", stone:4, color:"cream", image:"assets/Staron Solid Pure White.png" },
           { id:"staron-bright-white",    name:"Staron Bright White",    origin:"Staron", stone:4, color:"cream", image:"assets/Staron Bright White.png" },
@@ -227,7 +227,7 @@ const CATEGORIES = [
   {
     id: "pias-integrity",
     n: "05",
-    label: "Pias Integrity",
+    label: "Cubas MVA",
     tagline: "Lavatório e bancada, um só gesto.",
     tone: 1,
     accentTone: 4,
@@ -242,7 +242,7 @@ const CATEGORIES = [
         label: "Integrity",
         desc: "Cubas integradas em pedra, quartzo, cerâmico e solid surface.",
         secondary: "Visite o nosso showroom para descobrir mais referências.",
-        link: { label: "Tudo sobre Integrity", href: "#" },
+        link: { label: "Tudo sobre Integrity", href: "https://www.cosentino.com/pt-pt/cozinha/lava-loicas-de-cozinha/" },
         materials: [
           { id:"int-due-l",  name:"Integrity Due L",  origin:"MVA", stone:4, color:"cream", image:"assets/Integrity Due L.png" },
           { id:"int-one",    name:"Integrity One",    origin:"MVA", stone:5, color:"cream", image:"assets/Integrity One.png" },

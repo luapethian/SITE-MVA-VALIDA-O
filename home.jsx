@@ -42,14 +42,14 @@ function HeroCinematic({ tweaks }) {
         fontFamily: "var(--f-mono)", fontSize: 11, letterSpacing: ".08em", textTransform: "uppercase"
       }}>
         <span>DESDE 1962</span>
-        <span>{cur.chapter}</span>
+        <span style={{ opacity: "0" }}>{cur.chapter}</span>
       </div>
 
       <div style={{
         position: "absolute", left: "var(--pad-x)", right: "var(--pad-x)",
         bottom: "22%", color: "#F4F2EE"
       }}>
-        <div className="t-mono" style={{ color: "rgba(244,242,238,.6)", marginBottom: 24 }}>
+        <div className="t-mono" style={{ color: "rgba(244,242,238,.6)", marginBottom: 24, opacity: "0" }}>
           {String(i + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")} · {cur.loc}
         </div>
         <h1 style={{
@@ -141,7 +141,7 @@ function HomeHero({ mode }) {
 // ─── § 01 Atelier
 function HomeIntro() {
   return (
-    <section className="container reveal" style={{ padding: "160px var(--pad-x) 140px" }}>
+    <section className="container reveal" style={{ padding: "100px var(--pad-x) 90px" }}>
       <div data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.45fr) minmax(0, 1fr)", gap: "min(80px, 6vw)", alignItems: "center" }}>
         {/* Visual block — controlled editorial proportion */}
         <div style={{ position: "relative", overflow: "hidden", aspectRatio: "16 / 10", width: "100%", background: "#1B1A18" }}>
@@ -160,7 +160,7 @@ function HomeIntro() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", padding: "8px 0" }}>
-          <div className="t-mono" style={{ letterSpacing: ".14em" }}>§ 01 — Desde 1962</div>
+          <div className="t-mono" style={{ letterSpacing: ".14em", opacity: "0" }}>§ 01 — Desde 1962</div>
           <h2 style={{
             margin: "36px 0 0",
             fontFamily: "var(--f-sans)",
@@ -212,13 +212,13 @@ function FeaturedMaterials({ go }) {
   { image: "assets/home/quartzo.png", name: "Quartzo", desc: "Performance desenhada, palete cromática controlada.", slug: "quartzo" },
   { image: "assets/home/ceramico.png", name: "Cerâmico", desc: "Plano contínuo, escala arquitectónica.", slug: "ceramico" },
   { image: "assets/home/solid-surfaces.png", name: "Solid Surfaces", desc: "Continuidade sem juntas, formas esculpidas.", slug: "solid-surfaces" },
-  { image: "assets/home/integrity.png", name: "Pias Integrity", desc: "Lavatório e bancada, um só gesto.", slug: "pias-integrity" }];
+  { image: "assets/home/integrity.png", name: "Cubas MVA", desc: "Lavatório e bancada, um só gesto.", slug: "pias-integrity" }];
 
   return (
     <section style={{ padding: "40px 0 140px" }}>
-      <div className="container reveal" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48 }}>
+      <div className="container reveal feat-mat-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48 }}>
         <div>
-          <div className="t-mono" style={{ marginBottom: 18 }}>§ 02 — Materiais</div>
+          <div className="t-mono" style={{ marginBottom: 18, opacity: "0" }}>§ 02 — Materiais</div>
           <h2 className="t-h1" style={{ margin: 0, maxWidth: "14ch", fontWeight: 300, fontSize: "83px" }}>Materiais</h2>
         </div>
         <a href="#/products" onClick={(e) => {e.preventDefault();go("products");}} className="lnk">
@@ -279,7 +279,7 @@ function FeaturedMaterialCard({ item, idx, go }) {
 // ─── § 03 Actualidade
 function EditorialPull() {
   return (
-    <section className="surface-deep" style={{ padding: "160px 0", color: "var(--bg)" }}>
+    <section className="surface-deep" style={{ padding: "100px 0", color: "var(--bg)" }}>
       <div className="container reveal" style={{
         display: "grid", gridTemplateColumns: "minmax(0, 1.45fr) minmax(0, 1fr)", gap: "min(80px, 6vw)", alignItems: "stretch"
       }} data-mobile-stack="">
@@ -296,7 +296,7 @@ function EditorialPull() {
           <div style={{
             position: "absolute", top: 18, left: 18,
             fontFamily: "var(--f-mono)", fontSize: 10, letterSpacing: ".08em", textTransform: "uppercase",
-            color: "rgba(244,242,238,.9)", mixBlendMode: "difference"
+            color: "rgba(244,242,238,.9)", mixBlendMode: "difference", opacity: "0"
           }}>
             Parque Industrial · Taveiro
           </div>
@@ -304,7 +304,7 @@ function EditorialPull() {
 
         {/* Right text */}
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "24px 0" }}>
-          <div className="t-mono" style={{ color: "rgba(244,242,238,.55)", letterSpacing: ".14em" }}>§ 03 — Actualidade</div>
+          <div className="t-mono" style={{ color: "rgba(244,242,238,.55)", letterSpacing: ".14em", opacity: "0" }}>§ 03 — Actualidade</div>
           <h2 style={{
             margin: "36px 0 0",
             fontFamily: "var(--f-sans)",
@@ -336,12 +336,12 @@ function EditorialPull() {
 // ─── § 04 Arquitectura em matéria — timeless showcase (no client/year)
 function ArchitectureInMatter({ go }) {
   return (
-    <section className="surface-deep" style={{ padding: "160px 0", color: "var(--bg)" }}>
+    <section className="surface-deep" style={{ padding: "100px 0", color: "var(--bg)" }}>
       <div className="container reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "min(80px, 6vw)", alignItems: "end", marginBottom: 60 }}>
         <div>
-          <div className="t-mono" style={{ color: "rgba(244,242,238,.6)", marginBottom: 18 }}>§ 04 — Aplicações</div>
+          <div className="t-mono" style={{ color: "rgba(244,242,238,.6)", marginBottom: 18, opacity: "0" }}>§ 04 — Aplicações</div>
           <h2 className="t-h1" style={{ margin: 0, color: "rgb(255, 255, 255)", fontWeight: 300, maxWidth: "14ch" }}>
-            <span style={{ color: "rgb(255, 255, 255)" }}>Arquitectura</span><br /><span style={{ color: "rgb(255, 255, 255)" }}>em</span> <span style={{ fontStyle: "italic", color: "rgb(255, 255, 255)" }}>matéria</span>.
+            <span style={{ color: "rgb(255, 255, 255)" }}>Arquitectura</span><br /><span style={{ color: "rgb(255, 255, 255)" }}>em</span> <span style={{ fontStyle: "italic", color: "rgb(255, 255, 255)" }}>matéria</span>
           </h2>
         </div>
         <div>
@@ -354,7 +354,7 @@ function ArchitectureInMatter({ go }) {
       {/* Editorial gallery — 1 wide horizontal + 3 verticals below */}
       <div className="container reveal reveal-d2" style={{ display: "grid", gap: 18 }}>
         {/* Full-bleed wide hero */}
-        <div style={{ aspectRatio: "21 / 9", overflow: "hidden", background: "#1B1A18" }}>
+        <div className="arch-wide" style={{ aspectRatio: "21 / 9", overflow: "hidden", background: "#1B1A18" }}>
           <img src="assets/aplicacoes-1.jpg" alt="Aplicação em contexto — bancada" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
         </div>
         {/* 3 vertical cards */}
@@ -391,12 +391,17 @@ function ApplicationsBlock({ go }) {
   { id: "exterior", n: "04", label: "Exterior", desc: "Fachada ventilada, pátio, escada exterior." }];
 
   return (
-    <section className="container reveal" style={{ padding: "160px var(--pad-x)" }}>
-      <div data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 64 }}>
-        <div className="t-mono">§ 05 — Espaços</div>
+    <section className="container reveal" style={{ padding: "100px var(--pad-x)" }}>
+      <div data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 64, alignItems: "stretch" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, minHeight: 0 }}>
+          <div className="t-mono" style={{ opacity: "0" }}>§ 05 — Espaços</div>
+          <div className="app-block-img" style={{ position: "relative", overflow: "hidden", flexGrow: 1, minHeight: 200 }}>
+            <img src="assets/Hero_-_Materia.png" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", display: "block" }} />
+          </div>
+        </div>
         <div>
-          <h2 className="t-h1" style={{ margin: 0, fontWeight: 300, maxWidth: "22ch" }}>
-            A matéria, segundo o lugar.
+          <h2 className="t-h1" style={{ margin: 0, fontWeight: 300, maxWidth: "22ch" }}>A matéria, segundo o lugar
+
           </h2>
         </div>
       </div>
@@ -435,16 +440,21 @@ function ApplicationsBlock({ go }) {
 function ProcessBlock() {
   return (
     <section className="container" style={{ padding: "40px var(--pad-x) 160px" }}>
-      <div className="reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 80 }}>
-        <div className="t-mono">§ 06 — Processo</div>
+      <div className="reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", marginBottom: 80, alignItems: "stretch" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, minHeight: 0 }}>
+          <div className="t-mono" style={{ opacity: "0" }}>§ 06 — Processo</div>
+          <div style={{ position: "relative", overflow: "hidden", flexGrow: 1 }}>
+            <img src="assets/processo-hero.avif" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", display: "block" }} />
+          </div>
+        </div>
         <div>
-          <h2 className="t-h1" style={{ margin: 0, fontWeight: 300, maxWidth: "22ch" }}>Quatro fases.<br />Um único cuidado.</h2>
+          <h2 className="t-h1" style={{ margin: 0, fontWeight: 300, maxWidth: "22ch" }}>Quatro fases<br />Um único cuidado</h2>
         </div>
       </div>
       <div data-mobile-2col="" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "var(--line)" }}>
         {SERVICES.map((s, idx) =>
         <div key={s.id} className="reveal" style={{ padding: "40px 28px 56px", background: "var(--bg)", minHeight: 300 }}>
-            <div className="t-mono" style={{ marginBottom: 48 }}>0{idx + 1}</div>
+            <div className="t-mono" style={{ marginBottom: 48, opacity: "0" }}>0{idx + 1}</div>
             <div className="t-h3" style={{ fontWeight: 500, marginBottom: 14 }}>{s.label}</div>
             <p className="t-small" style={{ color: "var(--mid)", lineHeight: 1.55, fontSize: 13 }}>{s.desc}</p>
           </div>
@@ -479,11 +489,11 @@ function HomeCTA({ go }) {
   return (
     <section className="reveal" style={{
       position: "relative",
-      padding: "140px var(--pad-x) 160px",
+      padding: "90px var(--pad-x) 100px",
       overflow: "hidden"
     }}>
       {/* Image — left side, sits behind the typography */}
-      <div aria-hidden="true" className="cta-bg-img" style={{
+      <div aria-hidden="true" className="home-cta-img" style={{
         position: "absolute",
         top: "50%",
         left: "var(--pad-x)",
@@ -505,9 +515,9 @@ function HomeCTA({ go }) {
         gridTemplateColumns: "1fr 1.15fr",
         gap: "min(40px, 4vw)",
         alignItems: "end"
-      }} className="cta-grid">
-        <div className="t-mono" style={{ alignSelf: "start" }}>§ 07 — Início</div>
-        <div style={{ position: "relative", marginLeft: "-6vw" }}>
+      }} className="home-cta-grid">
+        <div className="t-mono" style={{ alignSelf: "start", opacity: "0" }}>§ 07 — Início</div>
+        <div className="home-cta-text" style={{ position: "relative", marginLeft: "-6vw" }}>
           <h2 className="t-display" style={{
             margin: 0, maxWidth: "14ch",
             position: "relative", zIndex: 1,
@@ -518,7 +528,7 @@ function HomeCTA({ go }) {
             letterSpacing: "-0.03em",
             textAlign: "left"
           }}>
-            Vamos<br />desenhar<br />em pedra.
+            Vamos<br />desenhar<br />em pedra
           </h2>
           <div style={{ marginTop: 48, display: "flex", gap: 14, position: "relative", zIndex: 1 }}>
             <a href="#/contacts" onClick={(e) => {e.preventDefault();go("contacts");}} className="btn btn-fill btn-lg">

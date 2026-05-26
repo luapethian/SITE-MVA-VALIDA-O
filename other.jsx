@@ -4,7 +4,7 @@ function ContactsHeader() {
   return (
     <section style={{ padding: "calc(var(--nav-h) + 80px) var(--pad-x) 60px" }}>
       <div className="reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(120px, 8vw)", alignItems: "stretch" }}>
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignSelf: "stretch" }}>
           <div className="t-mono" style={{ marginBottom: 24 }}>CONTACTOS</div>
           <div style={{
             position: "relative",
@@ -19,10 +19,10 @@ function ContactsHeader() {
               alt=""
               style={{
                 position: "absolute", inset: 0,
-                width: "100%", height: "100%",
+
                 objectFit: "cover",
-                objectPosition: "center center",
-                display: "block"
+                objectPosition: "center bottom",
+                display: "block", padding: "0px", margin: "0px", width: "615px", height: "516px"
               }} />
           </div>
         </div>
@@ -92,7 +92,22 @@ function ContactForm() {
           </h3>
         </div>
 
-        <form onSubmit={(e) => {e.preventDefault();if (valid) setSent(true);}} style={{ maxWidth: 760 }}>
+        <form onSubmit={async (e) => {
+          e.preventDefault();
+          if (!valid) return;
+          const res = await fetch("https://formspree.io/f/mkoererd", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({
+              nome: data.nome,
+              email: data.email,
+              organizacao: data.organizacao,
+              programa: data.programa,
+              mensagem: data.mensagem
+            })
+          });
+          if (res.ok) setSent(true);
+        }} style={{ maxWidth: 760 }}>
           <div className="form-row-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginBottom: 8 }}>
             <div>
               <label style={lblS}>01 — Nome</label>
@@ -202,7 +217,7 @@ function ClientPage({ go }) {
         display: "grid", gridTemplateColumns: "1fr 1fr",
         minHeight: "calc(100vh - var(--nav-h))"
       }} className="client-grid">
-        <div style={{
+        <div className="client-text-col" style={{
           padding: "max(120px, 12vh) var(--pad-x) 80px",
           display: "flex", flexDirection: "column", justifyContent: "space-between",
           gap: 80

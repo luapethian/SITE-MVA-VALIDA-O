@@ -36,10 +36,13 @@ function useScroll() {
 function Brand({ onClick }) {
   return (
     <a href="#/home" onClick={onClick} className="brand" aria-label="MVA Mármores — início">
-      <span className="b-mark">M</span>
-      <span>MVA <span style={{ opacity: .5, fontWeight: 400 }}>Mármores</span></span>
-    </a>);
-
+      <img
+        src="assets/LOGO-MVA-v2.png"
+        alt="MVA Mármores"
+        style={{ height: 52, width: "auto", display: "block" }}
+      />
+    </a>
+  );
 }
 
 // ───────────────────────────── Nav
@@ -55,7 +58,6 @@ function Nav({ route, go }) {
 
   const navigate = (id) => { go(id); setOpen(false); };
 
-  // Prevent body scroll when drawer is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -86,7 +88,7 @@ function Nav({ route, go }) {
         {items.map((it) =>
           <a key={it.id} href={"#/" + it.id}
           onClick={(e) => {e.preventDefault();navigate(it.id);}}
-          className={route === it.id ? " on" : ""}>
+          className={route === it.id ? "on" : ""}>
             {it.label}
           </a>
         )}
@@ -121,7 +123,7 @@ function Footer({ go }) {
         <div>
           <div className="t-mono" style={{ color: "rgba(244,242,238,.45)", marginBottom: 24 }}>MVA — MÁRMORES VALENTIM DE AZEVEDO</div>
           <h2 className="t-h2" style={{ margin: 0, fontWeight: 300, letterSpacing: "-0.02em", maxWidth: 520, color: "rgb(255, 255, 255)" }}>
-            Pedra trabalhada<br />com tempo e precisão.
+            Pedra trabalhada<br />com tempo e precisão
           </h2>
           <div style={{ marginTop: 32 }}>
             <a href="#/contacts" onClick={(e) => {e.preventDefault();go("contacts");}}
@@ -158,24 +160,30 @@ function Footer({ go }) {
             <li style={{ color: "rgb(255, 255, 255)" }}>Segunda — Sexta</li>
             <li style={{ color: "rgba(244,242,238,.55)" }}>08:00 — 18:00</li>
             <li style={{ marginTop: 14, color: "rgb(255, 255, 255)" }}>Visita ao showroom</li>
-            <li style={{ color: "rgba(244,242,238,.55)" }}>Sob marcação</li>
+            <li style={{ color: "rgba(244,242,238,.55)" }}></li>
           </ul>
         </div>
       </div>
       <div style={{ display: "flex", justifyContent: "center", padding: "56px var(--pad-x) 24px" }}>
-        <img
-          src="assets/centro-2030.png"
-          alt="Centro 2030 · Portugal 2030 · Cofinanciado pela União Europeia"
-          style={{
-            display: "block",
-            width: "100%",
-            maxWidth: 520,
-            height: "auto",
-            opacity: .92
-          }} />
+        <a
+          href="https://de.cdn-website.com/9eb504d056624357aba78d1044c1dff6/files/uploaded/d2bbec30-3b95-4b0a-8c64-e25a31fb1ff8.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "block" }}>
+          <img
+            src="assets/centro-2030.png"
+            alt="Centro 2030 · Portugal 2030 · Cofinanciado pela União Europeia"
+            style={{
+              display: "block",
+              width: "100%",
+              maxWidth: 520,
+              height: "auto",
+              opacity: .92
+            }} />
+        </a>
       </div>
       <div className="fbot">
-        <div>© 2026 MVA Mármores · Todos os direitos reservados</div>
+        <div style={{ opacity: "0" }}>© 2026 MVA Mármores · Todos os direitos reservados</div>
         <div>PT · EN</div>
       </div>
     </footer>);

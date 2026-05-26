@@ -410,7 +410,7 @@
   .nav-drawer a{
     font-size:clamp(28px,7vw,40px); font-weight:300; letter-spacing:-0.02em;
     padding:18px 0; border-bottom:1px solid var(--line);
-    opacity:.9;
+    opacity:.9; color:inherit;
   }
   .nav-drawer a.on{ opacity:1; }
 
@@ -421,52 +421,85 @@
 
   /* ── Mobile layout fixes ── */
   @media(max-width:760px){
+
+    /* Hero CTA — texto sai fora do ecrã */
+    .home-cta-grid{
+      grid-template-columns:1fr !important;
+      gap:24px !important;
+    }
+    .home-cta-text{
+      margin-left:0 !important;
+    }
+    .home-cta-img{ display:none !important; }
+
     /* 2-col → 1-col grids */
     [data-mobile-stack]{
       grid-template-columns:1fr !important;
       gap:32px !important;
     }
 
-    /* FeaturedMaterials — reduce image height */
-    .mat-card-img{ min-height:260px !important; height:52vw !important; }
-
-    /* ApplicationsBlock list rows */
-    .app-row{
-      grid-template-columns:1fr !important;
-      gap:6px !important;
-      padding:28px 0 !important;
+    /* FeaturedMaterials — header flex wrap */
+    .feat-mat-header{
+      flex-direction:column !important;
+      align-items:flex-start !important;
+      gap:16px !important;
     }
-    .app-row .app-desc{ display:none; }
-    .app-row .app-arr{ display:none; }
+
+    /* FeaturedMaterials — reduce image height */
+    .mat-card-img{ height:52vw !important; min-height:0 !important; }
+
+    /* ApplicationsBlock rows */
+    .app-row{
+      grid-template-columns:60px 1fr !important;
+      gap:6px !important;
+      padding:24px 0 !important;
+    }
+    .app-row .app-desc{ display:none !important; }
+    .app-row .app-arr{ display:none !important; }
 
     /* ProcessBlock & ContactInfo — 4-col → 2-col */
     [data-mobile-2col]{
       grid-template-columns:repeat(2,1fr) !important;
     }
 
-    /* Portfolio grid — 2-col modules */
+    /* ArchitectureInMatter gallery */
+    .arch-wide{ aspect-ratio:16/9 !important; }
+    .arch-3col{
+      grid-template-columns:1fr !important;
+    }
+    .arch-3col > div{ aspect-ratio:4/3 !important; }
+
+    /* Portfolio grid */
     [data-portfolio-module]{
       grid-template-columns:1fr !important;
       height:auto !important;
+    }
+    [data-portfolio-hero]{
+      height:56vw !important;
     }
     [data-portfolio-smalls]{
       grid-template-columns:1fr 1fr !important;
       grid-template-rows:auto auto !important;
       height:auto !important;
     }
-    [data-portfolio-module] [data-portfolio-smalls] > div{
-      aspect-ratio: 1/1;
+    [data-portfolio-smalls] > div{
+      aspect-ratio:1/1 !important;
       height:auto !important;
     }
-    [data-portfolio-hero]{
-      height:56vw !important;
-      aspect-ratio: unset !important;
+
+    /* Portfolio header — imagem em cima, texto em baixo */
+    .portfolio-header-grid{
+      grid-template-columns:1fr !important;
+    }
+    .portfolio-header-img{
+      min-height:52vw !important;
+      position:relative !important;
     }
 
-    /* CategoryCard (Products) — always 1 col */
+    /* CategoryCard (Products) */
     .cat-card{
       grid-template-columns:1fr !important;
-      padding:56px 0 !important;
+      padding:48px 0 !important;
     }
     .cat-card-img{
       order:1 !important;
@@ -484,49 +517,49 @@
     }
     .brand-section-sticky{
       position:static !important;
-      padding-bottom:32px !important;
+      padding-bottom:24px !important;
     }
     .brand-materials-grid{
       grid-template-columns:1fr 1fr !important;
-      column-gap:14px !important;
-      row-gap:14px !important;
     }
 
-    /* Contacts form — 2-col fields → 1-col */
+    /* Contacts form */
     .form-row-2{
       grid-template-columns:1fr !important;
       gap:0 !important;
     }
-
-    /* ContactInfo 4-col → 2-col */
     .contact-info-grid{
       grid-template-columns:1fr 1fr !important;
     }
 
-    /* Client page — 2-col → 1-col */
+    /* Client page — imagem no TOPO */
     .client-grid{
       grid-template-columns:1fr !important;
       min-height:auto !important;
     }
-    .client-image-col{ height:56vw; min-height:0 !important; }
-
-    /* HomeCTA */
-    .cta-bg-img{ display:none !important; }
-    .cta-grid{
-      grid-template-columns:1fr !important;
+    .client-image-col{
+      order:-1 !important;
+      height:56vw !important;
+      min-height:0 !important;
+    }
+    .client-text-col{
+      padding-top:48px !important;
+      padding-bottom:48px !important;
     }
 
-    /* EditorialPull & ArchitectureInMatter — keep as-is via data-mobile-stack */
-
-    /* ArchitectureInMatter gallery: 3-col → 1-col */
-    .arch-3col{
-      grid-template-columns:1fr !important;
+    /* Espaços vazios excessivos — reduz padding em mobile */
+    .mobile-pad-reduce{
+      padding-top:60px !important;
+      padding-bottom:60px !important;
     }
-    .arch-3col > div{ aspect-ratio:4/3 !important; }
+
+    /* ApplicationsBlock imagem — altura proporcional */
+    .app-block-img{
+      min-height:48vw !important;
+    }
   }
 
   @media(max-width:480px){
-    /* ProcessBlock & ContactInfo 2-col → 1-col on very small screens */
     [data-mobile-2col]{
       grid-template-columns:1fr !important;
     }

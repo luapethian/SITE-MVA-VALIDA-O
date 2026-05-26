@@ -3,8 +3,10 @@
 function PortfolioHeader() {
   return (
     <section style={{ padding: "calc(var(--nav-h) + 64px) var(--pad-x) 36px" }}>
-      <div className="reveal" data-mobile-stack="" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(80px, 6vw)" }}>
-        <div className="t-mono"></div>
+      <div className="reveal portfolio-header-grid" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "min(80px, 6vw)", alignItems: "stretch" }}>
+        <div className="portfolio-header-img" style={{ position: "relative", overflow: "hidden", minHeight: 0 }}>
+          <img src="assets/hero-projectos.jpg" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", display: "block" }} />
+        </div>
         <div>
           <h1 className="t-display" style={{ margin: 0, maxWidth: "14ch", letterSpacing: "-0.02em" }}>
             PROJECTOS
